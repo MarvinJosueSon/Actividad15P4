@@ -41,6 +41,7 @@ def Ingreso():
                             "precio": precioAux,
                             "stock": stockAux
                         }
+                        print("Producto ingresado con exito")
                     else: print("ERROR: La categoria debe ser una de las especificadas")
                 else:
                     print("ERROR: El stock y precio deben ser mayor a 0")
