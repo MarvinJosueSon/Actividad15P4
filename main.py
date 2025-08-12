@@ -6,12 +6,14 @@ def Ingreso():
         try:
             print(f"Ingreso producto #{i}")
             auxCodigo = input("Ingrese el codigo del producto: ")
-            if auxCodigo in productos:
-                print("El codigo del producto ya existe")
-                print("ERROR: El codigo del producto ya existe")
+            while auxCodigo in productos:
+                if auxCodigo in productos:
+                    print("ERROR: El codigo del producto ya existe")
+                    auxCodigo = input("Ingrese el codigo del producto nuevamente: ")
+                else:
+                    break
             else:
                 nombreAux=input("Ingrese el nombre del producto: ")
-
                 precioAux=float(input("Ingrese el precio del producto: "))
                 stockAux=int(input("Ingrese el stock del producto: "))
                 if stockAux>0 and precioAux>0:
