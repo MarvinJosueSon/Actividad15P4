@@ -15,7 +15,19 @@ def Ingreso():
             else:
                 nombreAux=input("Ingrese el nombre del producto: ")
                 precioAux=float(input("Ingrese el precio del producto: "))
+                while precioAux <0:
+                    try:
+                        print("ERROR: El precio debe ser mayor a 0")
+                        precioAux=float(input("Ingrese el precio del producto nuevamente: "))
+                    except ValueError:
+                        print("Por favor ingrese solo numeros")
                 stockAux=int(input("Ingrese el stock del producto: "))
+                while stockAux <0:
+                    try:
+                        print("ERROR: El stock debe ser mayor a 0")
+                        stockAux=int(input("Ingrese el stock del producto nuevamente: "))
+                    except ValueError:
+                        print("Por favor ingrese solo numeros enteros")
                 if stockAux>0 and precioAux>0:
                     categoriaAux = input("Ingrese el categoria del producto: (hombre, mujer, niños, otros): ").lower()
 
